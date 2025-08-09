@@ -7,6 +7,8 @@ class Solution:
                 continue
             if nums[i]>0:
                 break
+            if nums[i] + nums[-1] + nums[-2] < 0:
+                continue
             l, r = i + 1, len(nums) - 1
             while l < r:
                 traget = nums[i] + nums[l] + nums[r]
