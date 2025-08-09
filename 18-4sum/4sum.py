@@ -6,6 +6,8 @@ class Solution:
         for j in range(len(nums) - 3):
             if j > 0 and nums[j] == nums[j - 1]:
                 continue
+            if nums[j] + nums[j + 1] + nums[j + 2] + nums[j + 3] > target:
+                break
             for i in range(j + 1, len(nums) - 2):
                 if i > j + 1 and nums[i] == nums[i - 1]:
                     continue
