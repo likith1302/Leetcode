@@ -1,27 +1,15 @@
 class Solution:
-   def totalFruit(self, fruits: List[int]) -> int:
-     basket = {}  
-     left = 0
-     max_fruits = 0
-
-     for right in range(len(fruits)):
-        fruit = fruits[right]
-        if fruit in basket:
-            basket[fruit] += 1
-        else:
-            basket[fruit] = 1
-        while len(basket) > 2:
-            left_fruit = fruits[left]
-            basket[left_fruit] -= 1
-            if basket[left_fruit] == 0:
-                del basket[left_fruit]
-            left += 1
-
-        max_fruits = max(max_fruits, right - left + 1)
-
-     return max_fruits
-
-
-
-
+    def totalFruit(self, fruits: List[int]) -> int:
+        left=0
+        max_length=0
+        fruit_count=defaultdict(int)
+        for right in range(len(fruits)):
+            fruit_count[fruits[right]]+=1
+            while len(fruit_count)>2:
+                    fruit_count[fruits[left]]-=1
+                    if fruit_count[fruits[left]]==0:
+                        del fruit_count[fruits[left]]
+                    left+=1
+            max_length=max(max_length,right-left+1)
+        return max_length
         
