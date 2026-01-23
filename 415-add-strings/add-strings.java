@@ -5,20 +5,21 @@ class Solution {
         int c=0;
         int sum=0;
         String r="";
+        StringBuilder sb=new StringBuilder();
         while(i>=0||j>=0||c>0){
             int n1=(i>=0)? num1.charAt(i)-'0':0;
             int n2=(j>=0)? num2.charAt(j)-'0':0;
             sum=n1+n2+c;
             c=sum/10;
             sum%=10;
-            r=sum+r;
+            sb.append(sum);
             i--;
             j--;
       }
       if(c!=0){
-        r=c+r;
+        sb.append(c);
       }
-      return r;
+      return sb.reverse().toString();
 
     }
 }
