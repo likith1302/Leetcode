@@ -13,7 +13,7 @@ class Solution {
             
             if (i < 0) break;
             
-            // 2Find end of word
+            // Find end of word
             int j = i;
             
             // Move to start of word
