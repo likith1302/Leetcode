@@ -21,7 +21,7 @@ class Solution {
                 i--;
             }
             
-            // 4Append word
+            // Append word
             sb.append(s.substring(i + 1, j + 1));
             sb.append(" ");
         }
