@@ -3,14 +3,10 @@ class Solution {
         int x = a.length();
         int y = b.length();
         int d = y / x;
-        
-        String new1 = a.repeat(d);
-        String new2 = a.repeat(d + 1);
-        String new3 = a.repeat(d + 2);
-        
-        if (new1.contains(b)) return d;
-        if (new2.contains(b)) return d + 1;
-        if (new3.contains(b)) return d + 2;
+        for(int i=d;i<d+4;i++){
+             String str = a.repeat(i);
+             if(str.contains(b))return i;
+        } 
         return -1;
     }
 }
